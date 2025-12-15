@@ -17,7 +17,47 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<section>Vertical 1</section>
+					<section>Vertical 2</section>
+				</section>
+				<section>Slide 3
+					<aside class="notes">
+						<p>This is a speaker note for Slide 3.</p>
+						<p>It will not be visible to the audience.</p>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+## Slide with Markdown
+- Bullet 1
+- Bullet 2
+- Bullet 3
+A code block:
+```javascript
+console.log('Hello, world!');
+```
+Some link to [reveal.js](https://revealjs.com).
+---
+## Another Markdown Slide
+1. First item
+2. Second item
+3. Third item
+```python
+def greet(name):
+	return f"Hello, {name}!"
+print(greet("world"))
+```
+					</textarea>
+				</section>
+				<section>
+					<pre><code data-trim data-noescape>
+					(def lazy-fib
+					(concat
+					[0 1]
+					((fn rfib [a b]
+							(lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+					</code></pre>
+				</section>
 			</div>
 		</div>
 
