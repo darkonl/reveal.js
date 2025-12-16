@@ -16,47 +16,186 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
+				<!-- Portada -->
 				<section>
-					<section>Vertical 1</section>
-					<section>Vertical 2</section>
+					<h1>Taxa de Variació Mitjana</h1>
+					<h3>Solucions pas a pas</h3>
+					<p style="margin-top: 3em; font-size: 1.2em;">Funció: $f(x) = x^2$</p>
 				</section>
-				<section>Slide 3
-					<aside class="notes">
-						<p>This is a speaker note for Slide 3.</p>
-						<p>It will not be visible to the audience.</p>
-				</section>
-				<section data-markdown>
-					<textarea data-template>
-## Slide with Markdown
-- Bullet 1
-- Bullet 2
-- Bullet 3
-A code block:
-```javascript
-console.log('Hello, world!');
-```
-Some link to [reveal.js](https://revealjs.com).
----
-## Another Markdown Slide
-1. First item
-2. Second item
-3. Third item
-```python
-def greet(name):
-	return f"Hello, {name}!"
-print(greet("world"))
-```
-					</textarea>
-				</section>
+
+				<!-- Introducció a TVM -->
 				<section>
-					<pre><code data-trim data-noescape>
-					(def lazy-fib
-					(concat
-					[0 1]
-					((fn rfib [a b]
-							(lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-					</code></pre>
+					<h2>Què és la TVM?</h2>
+					<p style="margin-top: 1.5em;">La <strong>Taxa de Variació Mitjana</strong> mesura com canvia una funció de mitjana entre dos punts.</p>
+					<p style="margin-top: 1.5em;">Ens permet trobar la <em>pendent del segment</em> que uneix dos punts de la funció.</p>
+				</section>
+
+				<!-- Fórmula TVM -->
+				<section>
+					<h2>Fórmula de la TVM</h2>
+					<div style="margin-top: 2em; padding: 1.5em; background-color: rgba(0, 0, 0, 0.3); border-radius: 10px;">
+						$$\text{TVM}_{[a,b]} = \frac{f(b) - f(a)}{b - a}$$
+					</div>
+					<p style="margin-top: 2em; font-size: 0.9em;">On:</p>
+					<ul style="font-size: 0.9em; margin-top: 1em;">
+						<li>$a$ i $b$ són els extrems de l'interval</li>
+						<li>$f(b) - f(a)$ és la variació de la funció</li>
+						<li>$b - a$ és la variació de la variable independent</li>
+					</ul>
+				</section>
+
+				<!-- Apartat a) -->
+				<section>
+					<section>
+						<h2>Part a)</h2>
+						<h3 style="color: #5a9fd4;">Calcula la TVM de $f(x) = x^2$ entre $x = 0$ i $x = 2$</h3>
+						<p style="margin-top: 2em; font-size: 0.9em;">Desplaça cap avall per veure la solució pas a pas →</p>
+					</section>
+
+					<section>
+						<h3>Pas 1: Identificar els paràmetres</h3>
+						<div style="margin-top: 2em; text-align: left;">
+							<p>Interval: $[0, 2]$</p>
+							<p style="margin-top: 1em;">$a = 0$</p>
+							<p>$b = 2$</p>
+							<p>Funció: $f(x) = x^2$</p>
+						</div>
+					</section>
+
+					<section>
+						<h3>Pas 2: Calcular $f(a)$ i $f(b)$</h3>
+						<div style="margin-top: 2em; padding: 1.5em; background-color: rgba(0, 100, 200, 0.2); border-radius: 8px;">
+							<p>$f(0) = 0^2 = 0$</p>
+							<p style="margin-top: 1.5em;">$f(2) = 2^2 = 4$</p>
+						</div>
+					</section>
+
+					<section>
+						<h3>Pas 3: Aplicar la fórmula</h3>
+						<div style="margin-top: 2em; padding: 1.5em; background-color: rgba(0, 100, 200, 0.2); border-radius: 8px;">
+							$$\text{TVM}_{[0,2]} = \frac{f(2) - f(0)}{2 - 0}$$
+							<p style="margin-top: 1.5em;">$$= \frac{4 - 0}{2 - 0}$$</p>
+							<p style="margin-top: 1.5em;">$$= \frac{4}{2} = 2$$</p>
+						</div>
+						<p style="margin-top: 2em; color: #90EE90;"><strong>Resultat: TVM = 2</strong></p>
+					</section>
+				</section>
+
+				<!-- Apartat b) -->
+				<section>
+					<section>
+						<h2>Part b)</h2>
+						<h3 style="color: #5a9fd4;">Calcula la TVM de $f(x) = x^2$ entre $x = 1$ i $x = 4$</h3>
+						<p style="margin-top: 2em; font-size: 0.9em;">Desplaça cap avall per veure la solució pas a pas →</p>
+					</section>
+
+					<section>
+						<h3>Pas 1: Identificar els paràmetres</h3>
+						<div style="margin-top: 2em; text-align: left;">
+							<p>Interval: $[1, 4]$</p>
+							<p style="margin-top: 1em;">$a = 1$</p>
+							<p>$b = 4$</p>
+							<p>Funció: $f(x) = x^2$</p>
+						</div>
+					</section>
+
+					<section>
+						<h3>Pas 2: Calcular $f(a)$ i $f(b)$</h3>
+						<div style="margin-top: 2em; padding: 1.5em; background-color: rgba(100, 200, 0, 0.2); border-radius: 8px;">
+							<p>$f(1) = 1^2 = 1$</p>
+							<p style="margin-top: 1.5em;">$f(4) = 4^2 = 16$</p>
+						</div>
+					</section>
+
+					<section>
+						<h3>Pas 3: Aplicar la fórmula</h3>
+						<div style="margin-top: 2em; padding: 1.5em; background-color: rgba(100, 200, 0, 0.2); border-radius: 8px;">
+							$$\text{TVM}_{[1,4]} = \frac{f(4) - f(1)}{4 - 1}$$
+							<p style="margin-top: 1.5em;">$$= \frac{16 - 1}{4 - 1}$$</p>
+							<p style="margin-top: 1.5em;">$$= \frac{15}{3} = 5$$</p>
+						</div>
+						<p style="margin-top: 2em; color: #90EE90;"><strong>Resultat: TVM = 5</strong></p>
+					</section>
+				</section>
+
+				<!-- Apartat c) -->
+				<section>
+					<section>
+						<h2>Part c)</h2>
+						<h3 style="color: #5a9fd4;">Calcula la TVM de $f(x) = x^2$ entre $x = -2$ i $x = 1$</h3>
+						<p style="margin-top: 2em; font-size: 0.9em;">Desplaça cap avall per veure la solució pas a pas →</p>
+					</section>
+
+					<section>
+						<h3>Pas 1: Identificar els paràmetres</h3>
+						<div style="margin-top: 2em; text-align: left;">
+							<p>Interval: $[-2, 1]$</p>
+							<p style="margin-top: 1em;">$a = -2$</p>
+							<p>$b = 1$</p>
+							<p>Funció: $f(x) = x^2$</p>
+						</div>
+					</section>
+
+					<section>
+						<h3>Pas 2: Calcular $f(a)$ i $f(b)$</h3>
+						<div style="margin-top: 2em; padding: 1.5em; background-color: rgba(200, 100, 0, 0.2); border-radius: 8px;">
+							<p>$f(-2) = (-2)^2 = 4$</p>
+							<p style="margin-top: 1.5em;">$f(1) = 1^2 = 1$</p>
+						</div>
+					</section>
+
+					<section>
+						<h3>Pas 3: Aplicar la fórmula</h3>
+						<div style="margin-top: 2em; padding: 1.5em; background-color: rgba(200, 100, 0, 0.2); border-radius: 8px;">
+							$$\text{TVM}_{[-2,1]} = \frac{f(1) - f(-2)}{1 - (-2)}$$
+							<p style="margin-top: 1.5em;">$$= \frac{1 - 4}{1 + 2}$$</p>
+							<p style="margin-top: 1.5em;">$$= \frac{-3}{3} = -1$$</p>
+						</div>
+						<p style="margin-top: 2em; color: #90EE90;"><strong>Resultat: TVM = -1</strong></p>
+						<p style="margin-top: 1.5em; font-size: 0.85em;"><em>Nota: TVM negativa significa que la funció decreix en aquest interval.</em></p>
+					</section>
+				</section>
+
+				<!-- Resum de solucions -->
+				<section>
+					<h2>Resum de Solucions</h2>
+					<table style="margin-top: 2em; font-size: 0.9em;">
+						<tr>
+							<th style="padding: 1em;">Interval</th>
+							<th style="padding: 1em;">$f(a)$</th>
+							<th style="padding: 1em;">$f(b)$</th>
+							<th style="padding: 1em;">TVM</th>
+						</tr>
+						<tr>
+							<td style="padding: 1em; background-color: rgba(0, 100, 200, 0.2);">$[0, 2]$</td>
+							<td style="padding: 1em; background-color: rgba(0, 100, 200, 0.2);">$0$</td>
+							<td style="padding: 1em; background-color: rgba(0, 100, 200, 0.2);">$4$</td>
+							<td style="padding: 1em; background-color: rgba(0, 100, 200, 0.2);"><strong>2</strong></td>
+						</tr>
+						<tr>
+							<td style="padding: 1em; background-color: rgba(100, 200, 0, 0.2);">$[1, 4]$</td>
+							<td style="padding: 1em; background-color: rgba(100, 200, 0, 0.2);">$1$</td>
+							<td style="padding: 1em; background-color: rgba(100, 200, 0, 0.2);">$16$</td>
+							<td style="padding: 1em; background-color: rgba(100, 200, 0, 0.2);"><strong>5</strong></td>
+						</tr>
+						<tr>
+							<td style="padding: 1em; background-color: rgba(200, 100, 0, 0.2);">$[-2, 1]$</td>
+							<td style="padding: 1em; background-color: rgba(200, 100, 0, 0.2);">$4$</td>
+							<td style="padding: 1em; background-color: rgba(200, 100, 0, 0.2);">$1$</td>
+							<td style="padding: 1em; background-color: rgba(200, 100, 0, 0.2);"><strong>-1</strong></td>
+						</tr>
+					</table>
+				</section>
+
+				<!-- Conclusió -->
+				<section>
+					<h2>Conclusions</h2>
+					<ul style="margin-top: 2em;">
+						<li>La TVM mesura la <strong>pendent mitjana</strong> entre dos punts</li>
+						<li>Una TVM <strong>positiva</strong> indica que la funció creix</li>
+						<li>Una TVM <strong>negativa</strong> indica que la funció decreix</li>
+						<li>Per a $f(x) = x^2$, la TVM és més gran en intervals més llunyans del vèrtex</li>
+					</ul>
 				</section>
 			</div>
 		</div>
@@ -65,15 +204,20 @@ print(greet("world"))
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				mathjax3: {
+					mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+					config: 'TeX-APA'
+				},
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
 			});
 		</script>
 	</body>
