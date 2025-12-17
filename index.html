@@ -37,13 +37,13 @@
 				<section>
 					<h2>Fórmula de la TVM</h2>
 					<div style="padding: 1.5em; background-color: rgba(0, 0, 0, 0.3); border-radius: 10px;">
-						$$\text{TVM}_{[a,b]} = \frac{f(b) - f(a)}{b - a}$$
+						$$\text{TVM}_{[x_1,x_2]} = \frac{f(x_2) - f(x_1)}{x_2 - x_1}$$
 					</div>
 					<p style="font-size: 0.9em;">On:</p>
 					<ul style="font-size: 0.9em;">
-						<li>$a$ i $b$ són els extrems de l'interval</li>
-						<li>$f(b) - f(a)$ és la variació de la funció</li>
-						<li>$b - a$ és la variació de la variable independent</li>
+						<li>$x_1$ i $x_2$ són els extrems de l'interval</li>
+						<li>$f(x_2) - f(x_1)$ és la variació de la funció</li>
+						<li>$x_2 - x_1$ és la variació de la variable independent</li>
 					</ul>
 				</section>
 
@@ -335,6 +335,79 @@
 							<td style="padding: 1em; background-color: rgba(200, 100, 0, 0.2);"><strong>-1</strong></td>
 						</tr>
 					</table>
+				</section>
+
+				<!-- Comparació gràfica de les 3 TVM -->
+				<section>
+					<h2>Comparació Gràfica de les 3 TVM</h2>
+					<canvas data-chart="line" style="max-height: 500px;">
+<!--
+{
+ "data": {
+  "labels": ["-3", "-2", "-1", "0", "1", "2", "3", "4", "5"],
+  "datasets": [
+   {
+    "data": [9, 4, 1, 0, 1, 4, 9, 16, 25],
+    "label": "f(x) = x²",
+    "borderColor": "rgba(90,159,212,.8)",
+    "backgroundColor": "rgba(90,159,212,.2)",
+    "pointRadius": 5,
+    "borderWidth": 3
+   },
+   {
+    "data": [null, null, null, 0, 2, 4, null, null, null],
+    "label": "TVM [0,2] = 2",
+    "borderColor": "rgba(30,144,255,.8)",
+    "backgroundColor": "rgba(30,144,255,.2)",
+    "pointRadius": 4,
+    "pointStyle": "circle",
+    "borderWidth": 2,
+    "borderDash": [5, 5]
+   },
+   {
+    "data": [null, null, null, null, 1, 6, 11, 16, null],
+    "label": "TVM [1,4] = 5",
+    "borderColor": "rgba(144,238,144,.8)",
+    "backgroundColor": "rgba(144,238,144,.2)",
+    "pointRadius": 4,
+    "pointStyle": "rectRot",
+    "borderWidth": 2,
+    "borderDash": [10, 5]
+   },
+   {
+    "data": [null, 4, 3, 2, 1, null, null, null, null],
+    "label": "TVM [-2,1] = -1",
+    "borderColor": "rgba(255,50,50,.8)",
+    "backgroundColor": "rgba(255,50,50,.2)",
+    "pointRadius": 4,
+    "pointStyle": "triangle",
+    "borderWidth": 2,
+    "borderDash": [2, 2]
+   }
+  ]
+ },
+ "options": {
+  "scales": {
+   "x": {
+    "title": { "display": true, "text": "x", "color": "lightgray" },
+    "grid": { "color": "#444" }
+   },
+   "y": {
+    "title": { "display": true, "text": "f(x)", "color": "lightgray" },
+    "grid": { "color": "#444" }
+   }
+  },
+  "plugins": {
+   "legend": { 
+     "labels": { "color": "lightgray" },
+     "position": "right"
+   }
+  }
+ }
+}
+-->
+</canvas>
+					<p style="margin-top: 1em; font-size: 0.85em;"><em>Observa com les diferents pendents (2, 5 i -1) es representen amb rectes de diferent inclinació</em></p>
 				</section>
 
 				<!-- Conclusió -->
