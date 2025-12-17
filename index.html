@@ -12,6 +12,9 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- Chart plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
 	</head>
 	<body>
 		<div class="reveal">
@@ -33,11 +36,11 @@
 				<!-- Fórmula TVM -->
 				<section>
 					<h2>Fórmula de la TVM</h2>
-					<div style="margin-top: 2em; padding: 1.5em; background-color: rgba(0, 0, 0, 0.3); border-radius: 10px;">
+					<div style="padding: 1.5em; background-color: rgba(0, 0, 0, 0.3); border-radius: 10px;">
 						$$\text{TVM}_{[a,b]} = \frac{f(b) - f(a)}{b - a}$$
 					</div>
-					<p style="margin-top: 2em; font-size: 0.9em;">On:</p>
-					<ul style="font-size: 0.9em; margin-top: 1em;">
+					<p style="font-size: 0.9em;">On:</p>
+					<ul style="font-size: 0.9em;">
 						<li>$a$ i $b$ són els extrems de l'interval</li>
 						<li>$f(b) - f(a)$ és la variació de la funció</li>
 						<li>$b - a$ és la variació de la variable independent</li>
@@ -47,8 +50,8 @@
 				<!-- Apartat a) -->
 				<section>
 					<section>
-						<h2>Part a)</h2>
-						<h3 style="color: #5a9fd4;">Calcula la TVM de $f(x) = x^2$ entre $x = 0$ i $x = 2$</h3>
+						<h2>Apartat a</h2>
+						<h3 style="color: #5a9fd4;">Calcula la TVM de <br />$f(x) = x^2$ en l'interval $[0, 2]$</h3>
 						<p style="margin-top: 2em; font-size: 0.9em;">Desplaça cap avall per veure la solució pas a pas →</p>
 					</section>
 
@@ -56,14 +59,14 @@
 						<h3>Pas 1: Identificar els paràmetres</h3>
 						<div style="margin-top: 2em; text-align: left;">
 							<p>Interval: $[0, 2]$</p>
-							<p style="margin-top: 1em;">$a = 0$</p>
-							<p>$b = 2$</p>
+							<p style="margin-top: 1em;">$x_1 = 0$</p>
+							<p>$x_2 = 2$</p>
 							<p>Funció: $f(x) = x^2$</p>
 						</div>
 					</section>
 
 					<section>
-						<h3>Pas 2: Calcular $f(a)$ i $f(b)$</h3>
+						<h3>Pas 2: Calcular $f(x_1)$ i $f(x_2)$</h3>
 						<div style="margin-top: 2em; padding: 1.5em; background-color: rgba(0, 100, 200, 0.2); border-radius: 8px;">
 							<p>$f(0) = 0^2 = 0$</p>
 							<p style="margin-top: 1.5em;">$f(2) = 2^2 = 4$</p>
@@ -79,13 +82,62 @@
 						</div>
 						<p style="margin-top: 2em; color: #90EE90;"><strong>Resultat: TVM = 2</strong></p>
 					</section>
+
+					<section>
+						<h3>Visualització Gràfica</h3>
+						<canvas data-chart="line" style="max-height: 500px;">
+<!--
+{
+ "data": {
+  "labels": ["-1", "0", "0.5", "1", "1.5", "2", "3"],
+  "datasets": [
+   {
+    "data": [1, 0, 0.25, 1, 2.25, 4, 9],
+    "label": "f(x) = x²",
+    "borderColor": "rgba(90,159,212,.8)",
+    "backgroundColor": "rgba(90,159,212,.2)",
+    "pointRadius": 4,
+    "borderWidth": 3
+   },
+   {
+    "data": [null, 0, 1, 2, 3, 4, null],
+    "label": "Recta TVM (pendent = 2)",
+    "borderColor": "rgba(255,99,132,.8)",
+    "backgroundColor": "rgba(255,99,132,.2)",
+    "pointRadius": 6,
+    "pointStyle": "rectRot",
+    "borderWidth": 2,
+    "borderDash": [5, 5]
+   }
+  ]
+ },
+ "options": {
+  "scales": {
+   "x": {
+    "title": { "display": true, "text": "x", "color": "lightgray" },
+    "grid": { "color": "#444" }
+   },
+   "y": {
+    "title": { "display": true, "text": "f(x)", "color": "lightgray" },
+    "grid": { "color": "#444" }
+   }
+  },
+  "plugins": {
+   "legend": { "labels": { "color": "lightgray" } }
+  }
+ }
+}
+-->
+</canvas>
+						<p style="margin-top: 1em; font-size: 0.85em;"><em>La línia vermella mostra la pendent mitjana entre (0,0) i (2,4)</em></p>
+					</section>
 				</section>
 
 				<!-- Apartat b) -->
 				<section>
 					<section>
-						<h2>Part b)</h2>
-						<h3 style="color: #5a9fd4;">Calcula la TVM de $f(x) = x^2$ entre $x = 1$ i $x = 4$</h3>
+						<h2>Apartat b</h2>
+						<h3 style="color: #5a9fd4;">Calcula la TVM de <br/> $f(x) = x^2$ a l'interval $[1, 4]$</h3>
 						<p style="margin-top: 2em; font-size: 0.9em;">Desplaça cap avall per veure la solució pas a pas →</p>
 					</section>
 
@@ -93,14 +145,14 @@
 						<h3>Pas 1: Identificar els paràmetres</h3>
 						<div style="margin-top: 2em; text-align: left;">
 							<p>Interval: $[1, 4]$</p>
-							<p style="margin-top: 1em;">$a = 1$</p>
-							<p>$b = 4$</p>
+							<p style="margin-top: 1em;">$x_1 = 1$</p>
+							<p>$x_2 = 4$</p>
 							<p>Funció: $f(x) = x^2$</p>
 						</div>
 					</section>
 
 					<section>
-						<h3>Pas 2: Calcular $f(a)$ i $f(b)$</h3>
+						<h3>Pas 2: Calcular $f(x_1)$ i $f(x_2)$</h3>
 						<div style="margin-top: 2em; padding: 1.5em; background-color: rgba(100, 200, 0, 0.2); border-radius: 8px;">
 							<p>$f(1) = 1^2 = 1$</p>
 							<p style="margin-top: 1.5em;">$f(4) = 4^2 = 16$</p>
@@ -116,13 +168,62 @@
 						</div>
 						<p style="margin-top: 2em; color: #90EE90;"><strong>Resultat: TVM = 5</strong></p>
 					</section>
+
+					<section>
+						<h3>Visualització Gràfica</h3>
+						<canvas data-chart="line" style="max-height: 500px;">
+<!--
+{
+ "data": {
+  "labels": ["0", "1", "2", "3", "4", "5"],
+  "datasets": [
+   {
+    "data": [0, 1, 4, 9, 16, 25],
+    "label": "f(x) = x²",
+    "borderColor": "rgba(90,159,212,.8)",
+    "backgroundColor": "rgba(90,159,212,.2)",
+    "pointRadius": 4,
+    "borderWidth": 3
+   },
+   {
+    "data": [null, 1, 6, 11, 16, null],
+    "label": "Recta TVM (pendent = 5)",
+    "borderColor": "rgba(144,238,144,.8)",
+    "backgroundColor": "rgba(144,238,144,.2)",
+    "pointRadius": 6,
+    "pointStyle": "rectRot",
+    "borderWidth": 2,
+    "borderDash": [5, 5]
+   }
+  ]
+ },
+ "options": {
+  "scales": {
+   "x": {
+    "title": { "display": true, "text": "x", "color": "lightgray" },
+    "grid": { "color": "#444" }
+   },
+   "y": {
+    "title": { "display": true, "text": "f(x)", "color": "lightgray" },
+    "grid": { "color": "#444" }
+   }
+  },
+  "plugins": {
+   "legend": { "labels": { "color": "lightgray" } }
+  }
+ }
+}
+-->
+</canvas>
+						<p style="margin-top: 1em; font-size: 0.85em;"><em>La línia verda mostra la pendent mitjana entre (1,1) i (4,16)</em></p>
+					</section>
 				</section>
 
 				<!-- Apartat c) -->
 				<section>
 					<section>
-						<h2>Part c)</h2>
-						<h3 style="color: #5a9fd4;">Calcula la TVM de $f(x) = x^2$ entre $x = -2$ i $x = 1$</h3>
+						<h2>Apartat c</h2>
+						<h3 style="color: #5a9fd4;">Calcula la TVM de <br/> $f(x) = x^2$ entre $x = -2$ i $x = 1$</h3>
 						<p style="margin-top: 2em; font-size: 0.9em;">Desplaça cap avall per veure la solució pas a pas →</p>
 					</section>
 
@@ -130,14 +231,14 @@
 						<h3>Pas 1: Identificar els paràmetres</h3>
 						<div style="margin-top: 2em; text-align: left;">
 							<p>Interval: $[-2, 1]$</p>
-							<p style="margin-top: 1em;">$a = -2$</p>
-							<p>$b = 1$</p>
+							<p style="margin-top: 1em;">$x_1 = -2$</p>
+							<p>$x_2 = 1$</p>
 							<p>Funció: $f(x) = x^2$</p>
 						</div>
 					</section>
 
 					<section>
-						<h3>Pas 2: Calcular $f(a)$ i $f(b)$</h3>
+						<h3>Pas 2: Calcular $f(x_1)$ i $f(x_2)$</h3>
 						<div style="margin-top: 2em; padding: 1.5em; background-color: rgba(200, 100, 0, 0.2); border-radius: 8px;">
 							<p>$f(-2) = (-2)^2 = 4$</p>
 							<p style="margin-top: 1.5em;">$f(1) = 1^2 = 1$</p>
@@ -154,6 +255,55 @@
 						<p style="margin-top: 2em; color: #90EE90;"><strong>Resultat: TVM = -1</strong></p>
 						<p style="margin-top: 1.5em; font-size: 0.85em;"><em>Nota: TVM negativa significa que la funció decreix en aquest interval.</em></p>
 					</section>
+
+					<section>
+						<h3>Visualització Gràfica</h3>
+						<canvas data-chart="line" style="max-height: 500px;">
+<!--
+{
+ "data": {
+  "labels": ["-3", "-2", "-1", "0", "1", "2"],
+  "datasets": [
+   {
+    "data": [9, 4, 1, 0, 1, 4],
+    "label": "f(x) = x²",
+    "borderColor": "rgba(90,159,212,.8)",
+    "backgroundColor": "rgba(90,159,212,.2)",
+    "pointRadius": 4,
+    "borderWidth": 3
+   },
+   {
+    "data": [null, 4, 3, 2, 1, null],
+    "label": "Recta TVM (pendent = -1)",
+    "borderColor": "rgba(255,140,0,.8)",
+    "backgroundColor": "rgba(255,140,0,.2)",
+    "pointRadius": 6,
+    "pointStyle": "rectRot",
+    "borderWidth": 2,
+    "borderDash": [5, 5]
+   }
+  ]
+ },
+ "options": {
+  "scales": {
+   "x": {
+    "title": { "display": true, "text": "x", "color": "lightgray" },
+    "grid": { "color": "#444" }
+   },
+   "y": {
+    "title": { "display": true, "text": "f(x)", "color": "lightgray" },
+    "grid": { "color": "#444" }
+   }
+  },
+  "plugins": {
+   "legend": { "labels": { "color": "lightgray" } }
+  }
+ }
+}
+-->
+</canvas>
+						<p style="margin-top: 1em; font-size: 0.85em;"><em>La línia taronja mostra la pendent mitjana negativa entre (-2,4) i (1,1)</em></p>
+					</section>
 				</section>
 
 				<!-- Resum de solucions -->
@@ -162,8 +312,8 @@
 					<table style="margin-top: 2em; font-size: 0.9em;">
 						<tr>
 							<th style="padding: 1em;">Interval</th>
-							<th style="padding: 1em;">$f(a)$</th>
-							<th style="padding: 1em;">$f(b)$</th>
+							<th style="padding: 1em;">$f(x_1)$</th>
+							<th style="padding: 1em;">$f(x_2)$</th>
 							<th style="padding: 1em;">TVM</th>
 						</tr>
 						<tr>
@@ -215,9 +365,19 @@
 					mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
 					config: 'TeX-APA'
 				},
+				chart: {
+					defaults: {
+						color: 'lightgray',
+						scale: {
+							beginAtZero: true,
+							grid: { color: "#444" }
+						}
+					},
+					line: { borderColor: [ "rgba(90,159,212,.8)", "rgba(255,99,132,.8)" ]}
+				},
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath, RevealChart ]
 			});
 		</script>
 	</body>
